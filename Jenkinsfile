@@ -14,7 +14,7 @@ pipeline {
         stage('Release') {
              steps {
 
-                sh "mvn Release:Clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
+                sh "mvn release:clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
 
                    }
              }
