@@ -119,6 +119,17 @@
           </configuration>
         </plugin>
 
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.4.2</version>
+          <configuration>
+            <tagNameFormat>v@{project.version}</tagNameFormat>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <releaseProfiles>ctp-Nexus-Releases</releaseProfiles>
+          </configuration>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
@@ -131,12 +142,53 @@
     </plugins>
   </reporting>
 
+  <scm>
+    <connection>scm:git:https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</connection>
+    <url>https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test</url>
+    <developerConnection>scm:git:https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</developerConnection>
+  </scm>
+
   <distributionManagement>
     <snapshotRepository>
       <id>ctp-nexus-snapshot</id>
       <url>http://ctp-tester-training.tk:30003/repository/maven-test-repository-snapshot</url>
     </snapshotRepository>
+
+    <repository>
+      <id>ctp-nexus-release</id>
+      <url>http://ctp-tester-training.tk:30003/repository/maven-test-repository-release</url>
+    </repository>
+
   </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>releases</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <executions>
+              <execution>
+                <id>default-deploy</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <serverId>ctp-nexus-release</serverId>
+              <nexusUrl>http://ctp-tester-training.tk:30003/repository/maven-test-repository-release</nexusUrl>
+              <skipStaging>true</skipStaging>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
 
