@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Deploy') {
             steps {
 
                 git 'https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git'
