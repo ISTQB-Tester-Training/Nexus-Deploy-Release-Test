@@ -125,7 +125,7 @@
           <configuration>
             <tagNameFormat>v@{project.version}</tagNameFormat>
             <autoVersionSubmodules>true</autoVersionSubmodules>
-            <releaseProfiles>ctp-Nexus-Releases</releaseProfiles>
+            <releaseProfiles>ctp-Nexus-release</releaseProfiles>
           </configuration>
         </plugin>
 
@@ -142,8 +142,11 @@
   </reporting>
 
   <scm>
+    <!--suppress UnresolvedMavenProperty -->
     <connection>scm:git:https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</connection>
+    <!--suppress UnresolvedMavenProperty -->
     <url>https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test</url>
+    <!--suppress UnresolvedMavenProperty -->
     <developerConnection>scm:git:https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</developerConnection>
     <tag>v24.0</tag>
   </scm>
@@ -163,7 +166,7 @@
 
   <profiles>
     <profile>
-      <id>releases</id>
+      <id>ctp-Nexus-release</id>
       <build>
         <plugins>
           <plugin>
