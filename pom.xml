@@ -123,7 +123,7 @@
           <configuration>
             <tagNameFormat>v@{project.version}</tagNameFormat>
             <autoVersionSubmodules>true</autoVersionSubmodules>
-            <releaseProfiles>ctp-nexus-release</releaseProfiles>
+            <releaseProfiles>ctp-nexus-release-profile</releaseProfiles>
           </configuration>
         </plugin>
 
@@ -164,13 +164,13 @@
 
   <profiles>
     <profile>
-      <id>ctp-nexus-release</id>
+      <id>ctp-nexus-release-profile</id>
       <build>
         <plugins>
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
+            <version>1.5.1</version>
             <executions>
               <execution>
                 <id>default-deploy</id>
