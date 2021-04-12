@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+                GITHUB_TOKEN = credentials('GitHub-Token-fuer-jenkins-Zugriff')
+    }
+
     stages {
         stage('Deploy') {
             steps {
@@ -13,9 +17,7 @@ pipeline {
 
         stage('Release') {
              steps {
-                environment {
-                        GITHUB_TOKEN = credentials('GitHub-Token-fuer-jenkins-Zugriff')
-                    }
+
                 sh "mvn release:clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
 
                    }
