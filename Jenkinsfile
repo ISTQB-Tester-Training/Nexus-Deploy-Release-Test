@@ -21,7 +21,6 @@ pipeline {
 
                 sh "mvn release:clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
 
-                   }
              }
         }
     }
