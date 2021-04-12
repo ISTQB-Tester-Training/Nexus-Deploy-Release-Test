@@ -125,7 +125,7 @@
           <configuration>
             <tagNameFormat>v@{project.version}</tagNameFormat>
             <autoVersionSubmodules>true</autoVersionSubmodules>
-            <releaseProfiles>ctp-Nexus-release</releaseProfiles>
+            <releaseProfiles>ctp-nexus-release</releaseProfiles>
           </configuration>
         </plugin>
 
@@ -166,7 +166,7 @@
 
   <profiles>
     <profile>
-      <id>ctp-Nexus-release</id>
+      <id>ctp-nexus-release</id>
       <build>
         <plugins>
           <plugin>
