@@ -14,11 +14,13 @@ pipeline {
         stage('Release') {
 
              environment {
+
                 GITHUB_TOKEN = credentials('GitHub-Token-fuer-jenkins-Zugriff')
+
              }
 
              steps {
-                   echo "Daten für GitHub-Zugang ${GITHUB_TOKEN}"
+
                 sh "mvn release:clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
 
              }

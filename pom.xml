@@ -142,9 +142,9 @@
   </reporting>
 
   <scm>
-    <connection>scm:git:https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</connection>
-    <url>https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test</url>
-    <developerConnection>scm:git:https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</developerConnection>
+    <connection>scm:git:https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</connection>
+    <url>https://${env.GITHUB_TOKEN}github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test</url>
+    <developerConnection>scm:git:https://${env.GITHUB_TOKEN}github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</developerConnection>
     <tag>v24.0</tag>
   </scm>
 
