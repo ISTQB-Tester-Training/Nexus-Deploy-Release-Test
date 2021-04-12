@@ -18,7 +18,7 @@ pipeline {
              }
 
              steps {
-
+                   echo "Daten für GitHub-Zugang "${GITHUB_TOKEN}"
                 sh "mvn release:clean release:prepare release:perform -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}"
 
              }
