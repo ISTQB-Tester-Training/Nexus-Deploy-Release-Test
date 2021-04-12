@@ -148,10 +148,10 @@
     <url>https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test</url>
     <!--suppress UnresolvedMavenProperty -->
     <developerConnection>scm:git:https://${env.GITHUB_TOKEN}@github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git</developerConnection>
-    <tag>v24.0</tag>
   </scm>
 
   <distributionManagement>
+
     <snapshotRepository>
       <id>ctp-nexus-snapshot</id>
       <url>http://ctp-tester-training.tk:30003/repository/maven-test-repository-snapshot</url>
