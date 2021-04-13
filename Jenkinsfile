@@ -7,7 +7,7 @@ pipeline {
 
                 git 'https://github.com/ISTQB-Tester-Training/Nexus-Deploy-Release-Test.git'
 
-                sh "mvn deploy"
+                sh "mvn package org.sonatype.plugins:nexus-staging-maven-plugin:deploy -DskipTests"
             }
         }
 
