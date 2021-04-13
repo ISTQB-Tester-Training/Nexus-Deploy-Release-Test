@@ -182,7 +182,7 @@
             </executions>
             <configuration>
               <serverId>ctp-nexus-release</serverId>
-              <nexusUrl>http://ctp-tester-training.tk:30003/repository/maven-test-repository-release</nexusUrl>
+              <nexusUrl>http://ctp-tester-training.tk:30003/</nexusUrl>
               <skipStaging>true</skipStaging>
             </configuration>
           </plugin>
